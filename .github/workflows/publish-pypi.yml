@@ -1,0 +1,22 @@
+name: publish-pypi
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build
+        working-directory: python
+        run: |
+          python3 -m pip install --upgrade build
+          python3 -m build
+      - uses: pypa/gh-action-pypi-publish@v1.14.2
+        with:
+          packages-dir: python/dist/

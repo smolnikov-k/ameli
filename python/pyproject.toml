@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ameli-ai"
+version = "0.0.1"
+description = "Ameli: языковая модель для агентных задач на русском. Клиент появится вместе с моделью, пока в разработке."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Kirill Smolnikov" }]
+keywords = ["ameli", "llm", "agent", "russian", "tool-use"]
+
+[project.urls]
+Homepage = "https://huggingface.co/smolnikov/ameli"
+Repository = "https://github.com/smolnikov-k/ameli"
